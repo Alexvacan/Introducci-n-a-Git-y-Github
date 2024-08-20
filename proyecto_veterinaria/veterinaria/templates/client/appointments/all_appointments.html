@@ -1,0 +1,62 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+ <!-- service section -->
+ <div id="service" class="service">
+    <div class="container">
+       <div class="row">
+          <div class="col-md-7">
+             <div class="titlepage">
+                <h2><strong class="yellow">Bienvenido</strong><br>CITAS PENDIENTES</h2>
+             </div>
+          </div>
+       </div>
+       <table class="table table-striped" id="customers">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Hora y Fecha</th>
+                <th>Doctor</th>
+                <th>Mascota</th>
+                <th>Estado</th>
+                <th>Eliminar</th>
+              </tr>
+        </thead>
+        <tbody>
+            {%for fmtddate, appointment in appointments%}
+            <tr>
+                <th scope="row">*</th>
+                <td>{{fmtddate}}</td>
+                <td>{{appointment.doctor.user.name}}</td>
+                <td>{{appointment.pet.name}}</td>
+                {% if appointment.is_active %}
+                <td><span class="text-success"> Pendiente </span></td>
+                {% else %}
+                <td><span class="text-danger"> Inactivo </span></td>
+                {% endif %}
+                <td>
+                    <form action="delete_appointment/{{appointment.pk}}" method="post">
+                        {% csrf_token %}
+                        {% if appointment.is_active %}
+                        <button class="btn btn-danger" type="submit">Eliminar</button>
+                        {% else %}
+                        <button class="btn btn-danger" type="submit" disabled>Eliminar</button>
+                        {% endif %}
+                    </form>
+                </td>
+            </tr>
+            {%endfor%}
+        </tbody>
+ 
+         
+       </table>
+       
+        <a class="btn btn-primary" href="{% url 'new_appointment' %}">Nueva Cita</a>
+       
+
+    </div>
+ </div>
+ </div>
+
+{% endblock %}

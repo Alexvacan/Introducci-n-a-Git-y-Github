@@ -2,7 +2,6 @@
 
 El sistema de gestión veterinaria "HUELLITAS" es una plataforma integral diseñada para optimizar y facilitar la administración de una clínica veterinaria. Permite a los usuarios registrar y actualizar información de mascotas, gestionar citas, y acceder a historiales médicos completos y actualizados. Los veterinarios pueden consultar y editar servicios ofrecidos, mientras que los clientes pueden programar o cancelar citas y verificar la información de sus mascotas. Con una interfaz intuitiva y funcionalidades robustas, "HUELLITAS" asegura una gestión eficiente y una mejor atención a las mascotas.
 
-En resumen es un sistema que facilita la atencion  mascotas tanto al veterinario como  los duenos.
 
 ## Tabla de Contenido
 
